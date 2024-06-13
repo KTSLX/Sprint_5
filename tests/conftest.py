@@ -9,7 +9,5 @@ from selenium.webdriver.common.by import By
 def driver():
     driver = webdriver.Chrome()
     driver.get("https://stellarburgers.nomoreparties.site/")
-    WebDriverWait(driver, 3).until(EC.visibility_of_element_located(
-        (By.XPATH, '//*[@id="root"]/div/main/section[2]/div/button[text()="Войти в аккаунт"]')))
     yield driver
     driver.quit()

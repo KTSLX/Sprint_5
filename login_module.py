@@ -1,15 +1,16 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
-
+import locators
+import data_module
 def login(driver):
     # Ожидание появления кнопки "Войти" под формой логина
-    WebDriverWait(driver, 3).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="root"]/div/main/div/form/button[text()="Войти"]')))
+    WebDriverWait(driver, 3).until(EC.visibility_of_element_located((By.XPATH, locators.sign_in_button_on_login_page)))
     # Ввод логина
-    driver.find_element(By.XPATH, '//*[@id="root"]/div/main/div/form/fieldset[1]/div/div/input[@type="text"]').send_keys('akuts9123@gmail.com')
+    driver.find_element(By.XPATH, locators.email_input_field).send_keys(data_module.login_email)
     # Ввод пароля
-    driver.find_element(By.XPATH, '//*[@id="root"]/div/main/div/form/fieldset[2]/div/div/input[@type="password"]').send_keys('111111')
+    driver.find_element(By.XPATH, locators.password_input_field).send_keys(data_module.login_password)
     # Клик по кнопке "Войти"
-    driver.find_element(By.XPATH, '//*[@id="root"]/div/main/div/form/button[text()="Войти"]').click()
+    driver.find_element(By.XPATH, locators.sign_in_button_on_login_page).click()
     # Ожидание перехода на главную после успешного логина
-    WebDriverWait(driver, 3).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="root"]/div/main/section[1]/h1[text()="Соберите бургер"]')))
+    WebDriverWait(driver, 3).until(EC.visibility_of_element_located((By.XPATH, locators.constuctor_header)))
