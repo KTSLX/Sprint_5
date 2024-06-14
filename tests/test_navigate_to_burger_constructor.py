@@ -18,9 +18,6 @@ def test_from_account_to_constructor_opened(driver, constructor_button):
     # Кликнуть на кнопку "Войти в аккаунт"
     driver.find_element(By.XPATH, locators.sign_in_button).click()
 
-    # Ожидание появления кнопки "Войти" под формой логина
-    WebDriverWait(driver, 3).until(EC.visibility_of_element_located((By.XPATH, locators.sign_in_button_on_login_page)))
-
     # Логинимся и попадаем на главную
     login(driver)
 
@@ -46,4 +43,3 @@ def test_from_account_to_constructor_opened(driver, constructor_button):
     # Проверка, что заголовок на главной странице корректный
     header = driver.find_element(By.XPATH, locators.constuctor_header).text
     assert header == "Соберите бургер"
-

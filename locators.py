@@ -1,13 +1,13 @@
 
 #Логин
-email_input_field = './/main/div/form/fieldset/div/div/input[@type="text"]'  #поле ввода email на странице входа
-password_input_field = './/main/div/form/fieldset/div/div/input[@type="password"]'  #поле ввода пароля на странице входа
-sign_in_button_on_login_page = './/main/div/form/button[text()="Войти"]'  #кнопка Входа на странице логина
+email_input_field = './/div/div/input[@type="text"]'  #поле ввода email на странице входа
+password_input_field = './/div/div/input[@type="password"]'  #поле ввода пароля на странице входа
+sign_in_button_on_login_page = './/form/button[text()="Войти"]'  #кнопка Входа на странице логина
 sign_in_button_on_registration_page = './/div/div/p[text()="Уже зарегистрированы?"]/a[text()="Войти"]'  #кнопка входа на странице регистрации
-sign_in_button_on_recovery_page = './/main/div/div/p[text()="Вспомнили пароль?"]/a[text()="Войти"]'  #кнопка входа на странице Восстановления пароля
-sign_in_button = './/main/section/div/button[text()="Войти в аккаунт"]'  #кнопка Войти в аккаунт на главной странице
-registration_button_on_login_page = './/main/div/div/p[1]/a[text()="Зарегистрироваться"]'  #кнопка "Зарегистрироваться" на странице логина
-recovery_button_on_login_page = './/main/div/div/p/a[text()="Восстановить пароль"]'  #кнопка "забыл пароль" на странице логина
+sign_in_button_on_recovery_page = './/div/div/p[text()="Вспомнили пароль?"]/a[text()="Войти"]'  #кнопка входа на странице Восстановления пароля
+sign_in_button = './/section/div/button[text()="Войти в аккаунт"]'  #кнопка Войти в аккаунт на главной странице
+registration_button_on_login_page = './/div/div/p/a[text()="Зарегистрироваться"]'  #кнопка "Зарегистрироваться" на странице логина
+recovery_button_on_login_page = './/div/div/p/a[text()="Восстановить пароль"]'  #кнопка "забыл пароль" на странице логина
 
 
 #Шапка
@@ -19,13 +19,13 @@ stellar_burgers_button = './/header/nav/div/a'  #кнопа "Stellar Burgers" в
 registration_name_input = './/label[text()="Имя"]/following-sibling::input'  #поле ввода "Имя" на странице регистрации
 registration_email_input = './/label[text()="Email"]/following-sibling::input'  #поле ввода "Email" на странице регистрации
 registration_password_input = './/label[text()="Пароль"]/following-sibling::input'  #поле ввода "Пароль" на странице регистрации
-registration_in_form_button = './/main/div/form/button[text()="Зарегистрироваться"]'  #кнока "Зарегистрироваться" в форме регистрации
+registration_in_form_button = './/form/button[text()="Зарегистрироваться"]'  #кнока "Зарегистрироваться" в форме регистрации
 registration_form_error = './/fieldset/div/p[text()="Некорректный пароль"]'  #Error некорректный пароль
 
 
 #Личный кабинет
-logout_button = './/main/div/nav/ul/li/button[text()="Выход"]'  #кнопка выхода из личного кабинета
-account_info_header = './/main/div/nav/p[text()="В этом разделе вы можете изменить свои персональные данные"]'
+logout_button = './/ul/li/button[text()="Выход"]'  #кнопка выхода из личного кабинета
+account_info_header = './/nav/p[text()="В этом разделе вы можете изменить свои персональные данные"]'
 
 
 #Конструктор
