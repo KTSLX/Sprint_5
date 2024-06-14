@@ -1,13 +1,13 @@
 
 #Логин
-email_input_field = './/div/div/input[@type="text"]'  #поле ввода email на странице входа
-password_input_field = './/div/div/input[@type="password"]'  #поле ввода пароля на странице входа
+email_input_field = './/input[@type="text"]'  #поле ввода email на странице входа
+password_input_field = './/input[@type="password"]'  #поле ввода пароля на странице входа
 sign_in_button_on_login_page = './/form/button[text()="Войти"]'  #кнопка Входа на странице логина
-sign_in_button_on_registration_page = './/div/div/p[text()="Уже зарегистрированы?"]/a[text()="Войти"]'  #кнопка входа на странице регистрации
-sign_in_button_on_recovery_page = './/div/div/p[text()="Вспомнили пароль?"]/a[text()="Войти"]'  #кнопка входа на странице Восстановления пароля
-sign_in_button = './/section/div/button[text()="Войти в аккаунт"]'  #кнопка Войти в аккаунт на главной странице
-registration_button_on_login_page = './/div/div/p/a[text()="Зарегистрироваться"]'  #кнопка "Зарегистрироваться" на странице логина
-recovery_button_on_login_page = './/div/div/p/a[text()="Восстановить пароль"]'  #кнопка "забыл пароль" на странице логина
+sign_in_button_on_registration_page = './/p[text()="Уже зарегистрированы?"]/a[text()="Войти"]'  #кнопка входа на странице регистрации
+sign_in_button_on_recovery_page = './/p[text()="Вспомнили пароль?"]/a[text()="Войти"]'  #кнопка входа на странице Восстановления пароля
+sign_in_button = './/button[text()="Войти в аккаунт"]'  #кнопка Войти в аккаунт на главной странице
+registration_button_on_login_page = './/p/a[text()="Зарегистрироваться"]'  #кнопка "Зарегистрироваться" на странице логина
+recovery_button_on_login_page = './/p/a[text()="Восстановить пароль"]'  #кнопка "забыл пароль" на странице логина
 
 
 #Шапка
