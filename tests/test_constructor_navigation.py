@@ -1,34 +1,40 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
-import pytest
-
 import locators
 
 
-@pytest.mark.parametrize(
-    "button_xpath, header_xpath, scroll_xpath",
-    [
-        (locators.fillings_button, locators.fillings_header, None),  # Начинки (без скролла)
-        (locators.souces_button, locators.souces_header, None),  # Соусы (без скролла)
-        (locators.buns_button, locators.buns_header, locators.constructor_window)  # Булки (со скроллом)
-    ]
-)
-def test_constructor_navigation(driver, button_xpath, header_xpath, scroll_xpath):
+class TestConstructorNavigation:
 
-    # Описываем условие для скролла (нужен для теста булок, т.к. булки видны изначально)
-    if scroll_xpath:
+    def test_navigate_to_fillings(self, driver):
+        # Нажатие на кнопку "Начинки"
+        driver.find_element(By.XPATH, locators.fillings_button).click()
+        # Ожидание появления заголовка "Начинки"
+        header = WebDriverWait(driver, 3).until(
+            EC.visibility_of_element_located((By.XPATH, locators.fillings_header))
+        )
+        # Проверка видимости заголовка
+        assert header.is_displayed(), "Header 'Начинки' is not displayed."
+
+    def test_navigate_to_souces(self, driver):
+        # Нажатие на кнопку "Соусы"
+        driver.find_element(By.XPATH, locators.souces_button).click()
+        # Ожидание появления заголовка "Соусы"
+        header = WebDriverWait(driver, 3).until(
+            EC.visibility_of_element_located((By.XPATH, locators.souces_header))
+        )
+        # Проверка видимости заголовка
+        assert header.is_displayed(), "Header 'Соусы' is not displayed."
+
+    def test_navigate_to_buns_with_scroll(self, driver):
         # Выполнение скролла вниз в окне конструктора
-        constructor_menu = driver.find_element(By.XPATH, scroll_xpath)
+        constructor_menu = driver.find_element(By.XPATH, locators.constructor_window)
         driver.execute_script("arguments[0].scrollTop = arguments[0].scrollHeight", constructor_menu)
-
-    # Нажатие на кнопку навигации
-    driver.find_element(By.XPATH, button_xpath).click()
-
-    # Ожидание появления соответствующего заголовка после скролла
-    header = WebDriverWait(driver, 3).until(
-        EC.visibility_of_element_located((By.XPATH, header_xpath))
-    )
-
-    # Проверка видимости заголовка
-    assert header.is_displayed(), f"Header with xpath {header_xpath} is not displayed."
+        # Нажатие на кнопку "Булки"
+        driver.find_element(By.XPATH, locators.buns_button).click()
+        # Ожидание появления заголовка "Булки"
+        header = WebDriverWait(driver, 3).until(
+            EC.visibility_of_element_located((By.XPATH, locators.buns_header))
+        )
+        # Проверка видимости заголовка
+        assert header.is_displayed(), "Header 'Булки' is not displayed."
